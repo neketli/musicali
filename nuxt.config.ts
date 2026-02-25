@@ -13,11 +13,33 @@ export default defineNuxtConfig({
         'nuxt-studio',
         '@vueuse/nuxt',
     ],
-    css: ['~/assets/css/main.css'],
     devtools: {
         enabled: true,
     },
+    css: ['~/assets/css/main.css'],
+    router: {
+        options: {
+            scrollBehaviorType: 'smooth',
+        },
+    },
     compatibilityDate: '2024-04-03',
+    eslint: {
+        config: {
+            stylistic: {
+                indent: 4,
+                semi: true,
+                quotes: 'single',
+            },
+        },
+    },
+    studio: {
+        dev: false,
+        repository: {
+            provider: 'github',
+            owner: 'neketli',
+            repo: 'musicali',
+        },
+    },
     tailwindcss: {
         config: {
             theme: {
@@ -46,18 +68,10 @@ export default defineNuxtConfig({
             },
         },
     },
-    router: {
-        options: {
-            scrollBehaviorType: 'smooth',
-        },
+    experimental: {
+        appManifest: false,
     },
-    eslint: {
-        config: {
-            stylistic: {
-                indent: 4,
-                semi: true,
-                quotes: 'single',
-            },
-        },
+    app: {
+        pageTransition: { name: 'page', mode: 'out-in' },
     },
 })

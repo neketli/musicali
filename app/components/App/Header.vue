@@ -6,29 +6,31 @@
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="flex items-center justify-between h-16 md:h-20">
                     <NuxtLink
-                        href="#"
+                        href="/"
                         class="flex items-center gap-2"
-                        @click="scrollToTop()">
+                        @click="scrollToTop()"
+                    >
                         <div
                             class="w-10 h-10 rounded-full bg-gradient-to-br from-rose to-lavender flex items-center justify-center"
                         >
                             <Icon
                                 name="mdi:music"
-                                class="w-5 h-5 text-white" />
+                                class="w-5 h-5 text-white"
+                            />
                         </div>
                         <span class="font-display text-xl font-semibold text-text">
-                            musicali_teacher
+                            Musicali
                         </span>
                     </NuxtLink>
 
-                    <div class="hidden md:flex items-center gap-8">
+                    <div class="hidden md:flex items-center gap-4">
                         <NuxtLink
                             v-for="link in navLinks"
                             :key="link.href"
-                            :href="link.href"
-                            class="nav-link text-textLight hover:text-text transition-colors text-sm font-medium"
+                            :to="link.href"
+                            class="nav-link p-2 text-textLight hover:text-text transition-colors text-sm font-medium"
                             :class="link.class"
-                            @click="navTo(link.href)"
+                            @click="navWithScroll(link?.anchor)"
                         >
                             {{ link.label }}
                         </NuxtLink>
@@ -42,7 +44,8 @@
                     >
                         <Icon
                             name="mdi:menu"
-                            class="w-6 h-6 text-text" />
+                            class="w-6 h-6 text-text"
+                        />
                     </BaseButton>
                 </div>
             </div>
@@ -63,17 +66,18 @@
                         >
                             <Icon
                                 name="mdi:close"
-                                class="w-6 h-6 text-text" />
+                                class="w-6 h-6 text-text"
+                            />
                         </BaseButton>
                     </div>
                     <nav class="flex flex-col gap-6">
                         <NuxtLink
                             v-for="link in navLinks"
                             :key="link.href"
-                            :href="link.href"
+                            :to="link.href"
                             class="text-xl text-text font-medium hover:text-accent transition-colors"
                             :class="link.class"
-                            @click="navTo(link.href)"
+                            @click="navWithScroll(link?.anchor)"
                         >
                             {{ link.label }}
                         </NuxtLink>
@@ -89,7 +93,8 @@
                             >
                                 <Icon
                                     name="mdi:instagram"
-                                    class="w-5 h-5 text-text" />
+                                    class="w-5 h-5 text-text"
+                                />
                             </BaseButton>
                             <BaseButton
                                 href="tel:+79991234567"
@@ -98,7 +103,8 @@
                             >
                                 <Icon
                                     name="mdi:phone-outline"
-                                    class="w-5 h-5 text-text" />
+                                    class="w-5 h-5 text-text"
+                                />
                             </BaseButton>
                         </div>
                     </div>
@@ -113,23 +119,32 @@ const { scrollTo, scrollToTop } = useSmoothScroll()
 
 const navLinks = [
     {
-        href: '#about',
+        href: '/#about',
+        anchor: '#about',
         label: 'Обо мне',
     },
     {
-        href: '#services',
+        href: '/#services',
+        anchor: '#services',
         label: 'Услуги',
     },
     {
-        href: '#materials',
+        href: '/#materials',
+        anchor: '#materials',
         label: 'Материалы',
     },
     {
-        href: '#reviews',
+        href: '/#reviews',
+        anchor: '#reviews',
         label: 'Отзывы',
     },
     {
-        href: '#contact',
+        href: '/blog',
+        label: 'Блог',
+    },
+    {
+        href: '/#contact',
+        anchor: '#contact',
         label: 'Связаться',
         class: 'btn-primary px-6 py-3 rounded-full text-white hover:text-white font-semibold text-lg transition-opacity',
     },
@@ -137,9 +152,11 @@ const navLinks = [
 
 const mobileOpen = ref(false)
 
-function navTo(hash: string) {
+function navWithScroll(hash?: string) {
     mobileOpen.value = false
-    scrollTo(hash)
+    if (hash) {
+        scrollTo(hash)
+    }
 }
 </script>
 

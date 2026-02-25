@@ -1,0 +1,117 @@
+<template>
+    <article
+        v-if="post"
+        class="min-h-screen bg-cream"
+    >
+        <!-- Cover Image -->
+        <div class="relative h-[60vh] w-full overflow-hidden">
+            <NuxtImg
+                v-if="post.cover"
+                :src="post.cover"
+                :alt="post.title"
+                class="w-full h-full object-cover"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+            <div class="absolute bottom-0 left-0 right-0 p-8 md:p-12">
+                <div class="container mx-auto">
+                    <div
+                        v-if="post.tags?.length"
+                        class="flex flex-wrap gap-2 mb-4"
+                    >
+                        <span
+                            v-for="tag in post.tags"
+                            :key="tag"
+                            class="px-4 py-2 text-sm font-medium bg-white/90 text-text rounded-full"
+                        >
+                            {{ tag }}
+                        </span>
+                    </div>
+                    <h1 class="font-display text-4xl md:text-6xl font-bold text-white mb-4">
+                        {{ post.title }}
+                    </h1>
+                    <div class="flex items-center gap-4 text-white/90">
+                        <span
+                            v-if="post.author"
+                            class="font-medium"
+                        >{{ post.author }}</span>
+                        <span v-if="post.publishedAt">•</span>
+                        <time
+                            v-if="post.publishedAt"
+                            :datetime="post.publishedAt"
+                        >
+                            {{ formatDate(post.publishedAt) }}
+                        </time>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Content -->
+        <div class="container mx-auto px-4 py-12">
+            <div class="max-w-3xl mx-auto">
+                <!-- Description -->
+                <p
+                    v-if="post.description"
+                    class="text-xl text-textLight leading-relaxed mb-12 pb-12 border-b border-blush"
+                >
+                    {{ post.description }}
+                </p>
+
+                <!-- Body Content -->
+                <ContentRenderer
+                    v-if="post.body"
+                    :value="post"
+                    class="prose prose-lg max-w-none"
+                >
+                    <ContentRendererMarkdown :value="post" />
+                </ContentRenderer>
+
+                <!-- Back to Blog -->
+                <div class="mt-16 pt-8 border-t border-blush">
+                    <NuxtLink
+                        to="/blog"
+                        class="inline-flex items-center gap-2 text-accent hover:text-text transition-colors duration-300 font-medium"
+                    >
+                        <span class="text-2xl">←</span>
+                        Назад к блогу
+                    </NuxtLink>
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <div
+        v-else
+        class="min-h-screen bg-cream flex items-center justify-center"
+    >
+        <p class="text-textLight text-lg">
+            Пост не найден
+        </p>
+    </div>
+</template>
+
+<script setup lang="ts">
+const route = useRoute()
+const slug = route.params.slug
+
+const { data: post } = await useAsyncData(`blog-${slug}`, () =>
+    queryCollection('blog')
+        .path(`/blog/${slug}`)
+        .first(),
+)
+
+if (!post.value) {
+    throw createError({
+        statusCode: 404,
+        statusMessage: 'Post not found',
+    })
+}
+
+const formatDate = (dateString: string) => {
+    return new Date(dateString).toLocaleDateString('ru-RU', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+    })
+}
+</script>

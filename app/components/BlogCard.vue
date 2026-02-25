@@ -5,7 +5,7 @@
                 <div class="absolute inset-0 flex items-center justify-center">
                     <Icon
                         :name="icon"
-                        class="w-16 h-16 text-white/50"
+                        class="w-16 h-16 text-white opacity-80"
                     />
                 </div>
             </div>

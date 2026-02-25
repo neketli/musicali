@@ -26,7 +26,7 @@
                             'form-input w-full px-4 py-3 rounded-xl border bg-white focus:outline-none transition-colors',
                             errors.name
                                 ? 'border-rose focus:border-rose'
-                                : 'border-blush focus:border-accent'
+                                : 'border-blush focus:border-accent',
                         ]"
                         placeholder="Как вас зовут?"
                     >
@@ -61,7 +61,7 @@
                             'form-input w-full px-4 py-3 rounded-xl border bg-white focus:outline-none transition-colors',
                             errors.phone
                                 ? 'border-rose focus:border-rose'
-                                : 'border-blush focus:border-accent'
+                                : 'border-blush focus:border-accent',
                         ]"
                         placeholder="+7 (___) ___-__-__"
                     >
@@ -92,7 +92,7 @@
                         'form-input w-full px-4 py-3 rounded-xl border bg-white focus:outline-none resize-none transition-colors',
                         errors.message
                             ? 'border-rose focus:border-rose'
-                            : 'border-blush focus:border-accent'
+                            : 'border-blush focus:border-accent',
                     ]"
                 />
                 <span
@@ -116,12 +116,13 @@
 
             <p class="text-xs text-textLight text-center">
                 Нажимая кнопку, вы соглашаетесь
-                <NuxtLink
-                    href="/privacy"
+                <a
+                    href="/"
+                    target="_blank"
                     class="text-accent hover:underline"
                 >
                     с политикой конфиденциальности
-                </NuxtLink>.
+                </a>.
             </p>
         </div>
     </Form>

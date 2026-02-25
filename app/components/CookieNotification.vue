@@ -30,7 +30,8 @@
                             Мы используем файлы cookie для улучшения работы сайта. Продолжая использование
                             сайта, вы соглашаетесь с нашей
                             <NuxtLink
-                                href="/privacy"
+                                href="/"
+                                target="_blank"
                                 class="text-accent hover:underline"
                             >
                                 политикой конфиденциальности

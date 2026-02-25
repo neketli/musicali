@@ -13,7 +13,7 @@
                     </h2>
                 </div>
                 <NuxtLink
-                    href="#"
+                    href="/blog"
                     class="reveal reveal-delay-2 text-accent font-semibold hover:underline flex items-center gap-2">
                     Смотреть все
                     <Icon
@@ -38,24 +38,24 @@
 const posts = [
     {
         title: 'Осенний сборник 2025',
-        excerpt: 'Песенки и упражнения на осеннюю тематику, рабочие листы с заданиями',
-        bg: 'bg-gradient-to-br from-rose/30 to-orange/30',
+        excerpt: 'Песенки и упражнения на осеннюю тематику',
+        bg: 'bg-gradient-to-br from-rose/30 to-orange-200',
         icon: 'mdi:leaf-maple',
-        class: 'reveal',
+        class: 'reveal-delay-1',
     },
     {
         title: 'Зимний сборник 2025',
-        excerpt: 'Песенки, упражнения, игры на зимнюю тематику',
-        bg: 'bg-gradient-to-br from-blue/30 to-white/30',
+        excerpt: 'Песни, упражнения, игры на зимнюю тематику',
+        bg: 'bg-gradient-to-br from-blue-200 to-sky-100',
         icon: 'mdi:snowflake',
-        class: 'reveal-delay-1',
+        class: 'reveal-delay-2',
     },
     {
         title: 'Смелые шаги в музыкальном развитии',
         excerpt: 'Сборник с рабочими листами и музыкой',
-        bg: 'bg-gradient-to-br from-lavender/30 to-sage/30',
+        bg: 'bg-gradient-to-br from-lavender/30 to-purple-200',
         icon: 'mdi:music-circle-outline',
-        class: 'reveal-delay-2',
+        class: 'reveal-delay-3',
     },
 ]
 </script>
