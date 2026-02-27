@@ -14,11 +14,13 @@
 </template>
 
 <script setup lang="ts">
-type ButtonType = 'primary' | 'secondary' | 'ghost'
+type ButtonType = 'primary' | 'secondary' | 'ghost' | 'outline'
 type ButtonShape = 'default' | 'rounded'
 type ButtonSize = 'sm' | 'md' | 'lg'
 
-defineOptions({ inheritAttrs: false })
+defineOptions({
+    inheritAttrs: false,
+})
 
 const props = withDefaults(
     defineProps<{
@@ -54,6 +56,8 @@ const typeClasses = computed(() => {
       'border-2 border-accent/30 text-text hover:bg-blush/30 bg-transparent',
         ghost:
       'text-textLight hover:text-text transition-colors text-sm font-medium',
+        outline:
+      'border-2 border-blush text-text hover:bg-blush/30 bg-transparent',
     }
     return map[props.type]
 })

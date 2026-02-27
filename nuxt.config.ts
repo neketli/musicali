@@ -1,6 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
     modules: [
+        '@nuxthub/core',
         '@nuxt/content',
         '@nuxt/devtools',
         '@nuxt/eslint',
@@ -12,17 +13,48 @@ export default defineNuxtConfig({
         '@nuxtjs/sitemap',
         'nuxt-studio',
         '@vueuse/nuxt',
+        '@nuxtjs/seo',
+        'nuxt-yandex-metrika',
     ],
+
     devtools: {
         enabled: true,
     },
-    css: ['~/assets/css/main.css'],
+    app: {
+        pageTransition: {
+            name: 'page',
+            mode: 'out-in',
+        },
+    },
+
     router: {
         options: {
             scrollBehaviorType: 'smooth',
         },
     },
+
+    site: {
+        url: 'https://musicali.ru',
+        name: 'Musicali - Татьяна Ли',
+        description: 'Музыкальный педагог и логопед Татьяна Ли',
+        defaultLocale: 'ru',
+    },
+
+    experimental: {
+        appManifest: false,
+    },
     compatibilityDate: '2024-04-03',
+
+    hub: {
+        blob: {
+            driver: 's3',
+            accessKeyId: process.env.NUXT_S3_ACCESS_KEY || '',
+            secretAccessKey: process.env.NUXT_S3_SECRET_KEY || '',
+            bucket: process.env.NUXT_S3_BUCKET || '',
+            region: process.env.NUXT_S3_REGION || '',
+            endpoint: process.env.NUXT_S3_ENDPOINT || '',
+        },
+    },
     eslint: {
         config: {
             stylistic: {
@@ -32,6 +64,17 @@ export default defineNuxtConfig({
             },
         },
     },
+
+    image: {
+        provider: 'none',
+    },
+
+    robots: {
+        disallow: [
+            '/api',
+        ],
+    },
+
     studio: {
         dev: false,
         repository: {
@@ -41,37 +84,18 @@ export default defineNuxtConfig({
         },
     },
     tailwindcss: {
-        config: {
-            theme: {
-                extend: {
-                    colors: {
-                        cream: '#FDF8F3',
-                        milk: '#FAF6F1',
-                        blush: '#F5E1DA',
-                        rose: '#E8C4BE',
-                        lavender: '#D4C4E0',
-                        sage: {
-                            DEFAULT: '#B8C9B8',
-                            700: '#6B8B6B',
-                        },
-                        sageLight: '#D4E0D4',
-                        warm: '#EDE5DF',
-                        text: '#4A4A4A',
-                        textLight: '#6B6B6B',
-                        accent: '#C9A9A0',
-                    },
-                    fontFamily: {
-                        display: ['Cormorant Garamond', 'serif'],
-                        body: ['Nunito', 'sans-serif'],
-                    },
-                },
-            },
+        cssPath: '~/assets/css/main.css',
+        configPath: 'tailwind.config.ts',
+    },
+
+    yandexMetrika: {
+        id: process.env.NUXT_YM_ID,
+        debug: process.env.NODE_ENV !== 'production',
+        options: {
+            clickmap: true,
+            trackLinks: true,
+            accurateTrackBounce: true,
+            webvisor: true,
         },
-    },
-    experimental: {
-        appManifest: false,
-    },
-    app: {
-        pageTransition: { name: 'page', mode: 'out-in' },
     },
 })

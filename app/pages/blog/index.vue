@@ -1,31 +1,38 @@
 <template>
     <div class="min-h-screen bg-cream">
         <div class="container mx-auto px-4 pt-32 pb-12">
-            <header class="mb-12 text-center">
+            <div class="mb-12 text-center">
                 <h1 class="font-display text-5xl font-bold text-text mb-4">
                     Блог
                 </h1>
                 <p class="text-textLight text-lg max-w-2xl mx-auto">
-                    Заметки, советы и истории о музыке и технологиях
+                    Заметки, советы и истории о музыке
                 </p>
-            </header>
+            </div>
+
+            <BlogSearchFilter
+                v-model:search="search"
+                v-model:tags="tags"
+                v-model:date="date"
+                :all-tags="allTags"
+            />
 
             <div
-                v-if="posts?.length"
+                v-if="filteredPosts?.length"
                 class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
             >
                 <NuxtLink
-                    v-for="post in posts"
+                    v-for="post in filteredPosts"
                     :key="post.id"
                     :to="post.path"
                     class="group bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
                 >
-                    <div class="relative h-48 overflow-hidden">
-                        <NuxtImg
+                    <div class="relative h-48 overflow-hidden px-6 pt-4">
+                        <BaseImage
                             v-if="post.cover"
                             :src="post.cover"
                             :alt="post.title"
-                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                            class="w-full h-full rounded-lg object-cover"
                         />
                         <div
                             v-else
@@ -40,13 +47,13 @@
                             v-if="post.tags?.length"
                             class="flex flex-wrap gap-2 mb-3"
                         >
-                            <span
-                                v-for="tag in post.tags.slice(0, 3)"
-                                :key="tag"
-                                class="px-3 py-1 text-xs font-medium bg-blush text-text rounded-full"
+                            <BaseTag
+                                v-for="tagItem in post.tags.slice(0, 3)"
+                                :key="tagItem"
+                                variant="blush"
                             >
-                                {{ tag }}
-                            </span>
+                                {{ tagItem }}
+                            </BaseTag>
                         </div>
 
                         <h2
@@ -62,7 +69,6 @@
                         </p>
 
                         <div class="flex items-center justify-between text-sm text-textLight">
-                            <span v-if="post.author">{{ post.author }}</span>
                             <time
                                 v-if="post.publishedAt"
                                 :datetime="post.publishedAt"
@@ -78,20 +84,47 @@
                 v-else
                 class="text-center py-16"
             >
-                <p class="text-textLight text-lg">
-                    Пока нет публикаций. Загляните позже!
+                <Icon
+                    name="lucide:search-x"
+                    class="w-16 h-16 text-textLight/50 mx-auto mb-4"
+                />
+                <p class="text-textLight text-lg mb-2">
+                    Ничего не найдено
                 </p>
+                <p
+                    v-if="hasActiveFilters"
+                    class="text-textLight text-sm"
+                >
+                    Попробуйте изменить параметры поиска или сбросить фильтры
+                </p>
+                <BaseButton
+                    v-if="hasActiveFilters"
+                    variant="outline"
+                    class="mt-4"
+                    @click="clearFilters"
+                >
+                    Сбросить фильтры
+                </BaseButton>
             </div>
         </div>
     </div>
 </template>
 
 <script setup lang="ts">
-const { data: posts } = await useAsyncData('blog-posts', () =>
-    queryCollection('blog')
-        .order('publishedAt', 'DESC')
-        .all(),
-)
+const { search, tags, date, allTags, fetchAllTags, getFilteredPosts, filterPosts, clearFilters, hasActiveFilters } = useBlogFilters()
+
+const { data: posts } = await useAsyncData('blog-posts', () => getFilteredPosts())
+
+await fetchAllTags()
+
+const filteredPosts = computed(() => {
+    if (!posts.value) return []
+    return filterPosts(posts.value, {
+        search: search.value,
+        tags: tags.value,
+        date: date.value,
+    })
+})
 
 const formatDate = (dateString: string) => {
     return new Date(dateString).toLocaleDateString('ru-RU', {

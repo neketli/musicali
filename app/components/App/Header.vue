@@ -85,7 +85,7 @@
                     <div class="mt-auto">
                         <div class="flex justify-center gap-4 mt-6">
                             <BaseButton
-                                href="https://instagram.com/musicali_teacher"
+                                :href="instagram.url"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 class="p-3 rounded-full bg-blush hover:bg-rose transition-colors"
@@ -97,12 +97,14 @@
                                 />
                             </BaseButton>
                             <BaseButton
-                                href="tel:+79991234567"
-                                type="secondary"
-                                aria-label="Телефон"
+                                :href="telegram.url"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="p-3 rounded-full bg-blush hover:bg-rose transition-colors"
+                                aria-label="Telegram"
                             >
                                 <Icon
-                                    name="mdi:phone-outline"
+                                    name="mdi:telegram"
                                     class="w-5 h-5 text-text"
                                 />
                             </BaseButton>
@@ -116,6 +118,7 @@
 
 <script setup lang="ts">
 const { scrollTo, scrollToTop } = useSmoothScroll()
+const { instagram, telegram } = useContacts()
 
 const navLinks = [
     {

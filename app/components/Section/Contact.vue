@@ -42,25 +42,6 @@
                             </div>
                         </div>
                         <div class="flex items-center gap-4">
-                            <div class="w-12 h-12 rounded-2xl bg-lavender/20 flex items-center justify-center">
-                                <Icon
-                                    name="mdi:phone"
-                                    class="w-6 h-6 text-lavender"
-                                />
-                            </div>
-                            <div>
-                                <div class="text-sm text-textLight">
-                                    Телефон
-                                </div>
-                                <a
-                                    :href="`tel:${contacts.phone}`"
-                                    class="text-text font-medium hover:text-accent transition-colors"
-                                >
-                                    {{ contacts.phoneFormatted }}
-                                </a>
-                            </div>
-                        </div>
-                        <div class="flex items-center gap-4">
                             <div class="w-12 h-12 rounded-2xl bg-sage/20 flex items-center justify-center">
                                 <Icon
                                     name="mdi:instagram"
@@ -86,7 +67,8 @@
 
                 <ContactForm
                     class="reveal"
-                    @submit="handleSubmit" />
+                    @submit="handleSubmit"
+                />
             </div>
         </div>
     </section>

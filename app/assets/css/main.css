@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@plugin "@tailwindcss/typography";
 
 /* ===================================
    CSS Custom Properties
@@ -15,6 +16,10 @@
     --blush: #f5e1da;
     --lavender: #d4c4e0;
     --sage: #b8c9b8;
+    --text: #4a4a4a;
+    --text-light: #8b8b8b;
+    --cream: #fdf8f3;
+    --rose: #c9a9a0;
 }
 
 /* ===================================

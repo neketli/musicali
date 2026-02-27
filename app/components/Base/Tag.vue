@@ -23,7 +23,7 @@ const variantClasses = computed(() => {
     const map: Record<TagVariant, string> = {
         default: 'bg-blush/50 text-textLight',
         blush: 'bg-blush/50 text-textLight',
-        white: 'bg-white text-textLight',
+        white: 'bg-white text-text',
         accent: 'bg-accent text-white',
     }
     return map[props.variant]

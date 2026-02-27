@@ -63,28 +63,18 @@
                     <ul class="space-y-2">
                         <li>
                             <a
-                                :href="`mailto:${contacts.email}`"
+                                :href="`mailto:${email}`"
                                 class="text-white/60 hover:text-white transition-colors"
                             >
-                                {{ contacts.email }}
+                                {{ email }}
                             </a>
                         </li>
                         <li>
                             <a
-                                :href="`tel:${contacts.phone}`"
+                                :href="`tel:${phone}`"
                                 class="text-white/60 hover:text-white transition-colors"
                             >
-                                {{ contacts.phoneFormatted }}
-                            </a>
-                        </li>
-                        <li>
-                            <a
-                                :href="contacts.instagram.url"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                class="text-white/60 hover:text-white transition-colors"
-                            >
-                                {{ contacts.instagram.label }}
+                                {{ phoneFormatted }}
                             </a>
                         </li>
                     </ul>
@@ -92,30 +82,30 @@
             </div>
             <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
                 <p class="text-white/40 text-sm">
-                    2024 Татьяна Ли. Все права защищены.
+                    {{ new Date().getFullYear() }} Татьяна Ли. Все права защищены.
                 </p>
                 <div class="flex gap-4">
                     <a
-                        :href="contacts.instagram.url"
+                        :href="instagram.url"
                         target="_blank"
                         rel="noopener noreferrer"
                         class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors"
-                        :aria-label="contacts.instagram.name"
+                        :aria-label="instagram.name"
                     >
                         <Icon
-                            :name="contacts.instagram.icon"
+                            :name="instagram.icon"
                             class="w-5 h-5 text-white"
                         />
                     </a>
                     <a
-                        :href="contacts.telegram.url"
+                        :href="telegram.url"
                         target="_blank"
                         rel="noopener noreferrer"
                         class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors"
-                        :aria-label="contacts.telegram.name"
+                        :aria-label="telegram.name"
                     >
                         <Icon
-                            :name="contacts.telegram.icon"
+                            :name="telegram.icon"
                             class="w-5 h-5 text-white"
                         />
                     </a>
@@ -126,5 +116,5 @@
 </template>
 
 <script setup lang="ts">
-const contacts = useContacts()
+const { instagram, telegram, email, phoneFormatted, phone } = useContacts()
 </script>

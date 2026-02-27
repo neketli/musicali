@@ -5,11 +5,11 @@
     >
         <!-- Cover Image -->
         <div class="relative h-[60vh] w-full overflow-hidden">
-            <NuxtImg
+            <BaseImage
                 v-if="post.cover"
                 :src="post.cover"
                 :alt="post.title"
-                class="w-full h-full object-cover"
+                class="w-full h-full rounded-lg object-cover group-hover:scale-105 transition-transform duration-300"
             />
             <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
             <div class="absolute bottom-0 left-0 right-0 p-8 md:p-12">
@@ -18,23 +18,18 @@
                         v-if="post.tags?.length"
                         class="flex flex-wrap gap-2 mb-4"
                     >
-                        <span
+                        <BaseTag
                             v-for="tag in post.tags"
                             :key="tag"
-                            class="px-4 py-2 text-sm font-medium bg-white/90 text-text rounded-full"
+                            variant="white"
                         >
                             {{ tag }}
-                        </span>
+                        </BaseTag>
                     </div>
                     <h1 class="font-display text-4xl md:text-6xl font-bold text-white mb-4">
                         {{ post.title }}
                     </h1>
                     <div class="flex items-center gap-4 text-white/90">
-                        <span
-                            v-if="post.author"
-                            class="font-medium"
-                        >{{ post.author }}</span>
-                        <span v-if="post.publishedAt">•</span>
                         <time
                             v-if="post.publishedAt"
                             :datetime="post.publishedAt"
@@ -49,22 +44,11 @@
         <!-- Content -->
         <div class="container mx-auto px-4 py-12">
             <div class="max-w-3xl mx-auto">
-                <!-- Description -->
-                <p
-                    v-if="post.description"
-                    class="text-xl text-textLight leading-relaxed mb-12 pb-12 border-b border-blush"
-                >
-                    {{ post.description }}
-                </p>
-
-                <!-- Body Content -->
                 <ContentRenderer
                     v-if="post.body"
                     :value="post"
                     class="prose prose-lg max-w-none"
-                >
-                    <ContentRendererMarkdown :value="post" />
-                </ContentRenderer>
+                />
 
                 <!-- Back to Blog -->
                 <div class="mt-16 pt-8 border-t border-blush">
