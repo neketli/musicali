@@ -1,12 +1,10 @@
-FROM node:22-alpine AS builder
+FROM node:22-alpine AS base
 WORKDIR /app
 
 RUN apk update
 RUN apk add --no-cache make gcc g++ libc6-compat bash python3 curl
 
-COPY package.json package-lock.json .env ./
-
-FROM base as builder
+FROM base AS builder
 WORKDIR /src
 
 COPY . .
