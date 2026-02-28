@@ -27,3 +27,4 @@ logs
 pnpm-lock.yaml
 
 caddy/data
+caddy/config

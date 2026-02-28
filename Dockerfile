@@ -15,7 +15,7 @@ RUN npm run build . --dotenv .env
 FROM base AS production
 WORKDIR /app
 
-COPY --from=builder /src/.output ./output
+COPY --from=builder /src/.output ./.output
 
 EXPOSE 3000
 ENV NODE_ENV=production
