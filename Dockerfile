@@ -9,7 +9,7 @@ WORKDIR /src
 
 COPY . .
 RUN npm ci
-ENV NODE_OPTIONS=--max-old-space-size=2048
+ENV NODE_OPTIONS=--max-old-space-size=1536
 RUN npm run build . --dotenv .env
 
 FROM base AS production
