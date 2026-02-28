@@ -31,8 +31,6 @@ jobs:
                   script: |
                       cd /opt/musicali
                       git checkout main && git pull origin
-                      export HTTP_PROXY=https://dockerhub.timeweb.cloud/
-                      export HTTPS_PROXY=https://dockerhub.timeweb.cloud/
                       docker compose -f docker-compose.yml up --build -d
                       if [ $? -ne 0 ]; then echo "❌ ERROR: build failed" && exit 1; fi
                       docker system prune -a -f
