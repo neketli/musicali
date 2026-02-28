@@ -35,7 +35,7 @@ export default defineNuxtConfig({
 
     site: {
         url: 'https://musicali.ru',
-        name: 'Musicali - Татьяна Ли',
+        name: 'Musicali - Татьяна Ли педагог',
         description: 'Музыкальный педагог и логопед Татьяна Ли',
         defaultLocale: 'ru',
     },
@@ -72,6 +72,7 @@ export default defineNuxtConfig({
     robots: {
         disallow: [
             '/api',
+            '/private',
         ],
     },
 

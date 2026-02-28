@@ -9,7 +9,7 @@
     >
         <div
             v-if="isVisible"
-            class="fixed bottom-0 left-0 right-0 z-50 bg-white border-t border-blush/30 shadow-lg md:bottom-4 md:right-4 md:left-auto md:max-w-md md:rounded-2xl"
+            class="fixed bottom-0 left-0 right-0 z-50 bg-white border-t border-blush/30 shadow-lg md:bottom-4 md:right-4 md:left-auto md:max-w-xl md:rounded-2xl"
         >
             <div class="p-4 md:p-5">
                 <div class="flex items-start gap-3">
@@ -29,13 +29,19 @@
                         <p class="text-sm text-textLight mb-3">
                             Мы используем файлы cookie для улучшения работы сайта. Продолжая использование
                             сайта, вы соглашаетесь с нашей
-                            <NuxtLink
-                                href="/"
+                            <a
+                                href="/media/privacy-policy.pdf"
                                 target="_blank"
                                 class="text-accent hover:underline"
                             >
                                 политикой конфиденциальности
-                            </NuxtLink>.
+                            </a> и <a
+                                href="/media/terms-of-service.pdf"
+                                target="_blank"
+                                class="text-accent hover:underline"
+                            >
+                                пользовательским соглашением
+                            </a>
                         </p>
                         <BaseButton
                             @click="acceptCookies"

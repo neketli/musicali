@@ -1,7 +1,8 @@
 <template>
     <section
         id="materials"
-        class="py-20 md:py-28 bg-white relative overflow-hidden">
+        class="py-20 md:py-28 bg-white relative overflow-hidden"
+    >
         <div class="absolute -top-32 -right-32 w-96 h-96 bg-lavender/10 rounded-full blur-3xl" />
         <div class="absolute -bottom-32 -left-32 w-96 h-96 bg-rose/10 rounded-full blur-3xl" />
 
@@ -19,15 +20,18 @@
             </div>
 
             <div class="grid md:grid-cols-3 gap-6">
-                <div
+                <NuxtLink
                     v-for="(m, i) in materials"
                     :key="m.title"
-                    :class="['reveal material-card group cursor-pointer', i === 1 ? 'reveal-delay-1' : i === 2 ? 'reveal-delay-2' : '']">
+                    :class="['reveal material-card group cursor-pointer', i === 1 ? 'reveal-delay-1' : i === 2 ? 'reveal-delay-2' : '']"
+                    :to="m.link"
+                >
                     <div :class="['rounded-3xl p-6 h-full', m.bg]">
                         <div class="material-icon w-14 h-14 rounded-2xl bg-white flex items-center justify-center mb-4 shadow-sm">
                             <Icon
                                 :name="m.icon"
-                                :class="['w-7 h-7', m.iconColor]" />
+                                :class="['w-7 h-7', m.iconColor]"
+                            />
                         </div>
                         <h3 class="font-display text-xl font-semibold text-text mb-2">
                             {{ m.title }}
@@ -39,10 +43,11 @@
                             <span>{{ m.action }}</span>
                             <Icon
                                 name="mdi:arrow-right"
-                                class="w-4 h-4" />
+                                class="w-4 h-4"
+                            />
                         </div>
                     </div>
-                </div>
+                </NuxtLink>
             </div>
 
             <div class="reveal mt-12 bg-gradient-to-r from-milk via-white to-milk rounded-3xl p-8 md:p-12">
@@ -58,17 +63,20 @@
                             <li
                                 v-for="item in courseFeatures"
                                 :key="item"
-                                class="flex items-center gap-3 text-textLight">
+                                class="flex items-center gap-3 text-textLight"
+                            >
                                 <Icon
                                     name="mdi:check"
-                                    class="w-5 h-5 text-sage flex-shrink-0" />
+                                    class="w-5 h-5 text-sage flex-shrink-0"
+                                />
                                 {{ item }}
                             </li>
                         </ul>
                         <NuxtLink
                             href="#contact"
                             class="btn-primary inline-flex px-6 py-3 rounded-full text-white font-semibold"
-                            @click.prevent="scrollTo('#contact')">
+                            @click.prevent="scrollTo('#contact')"
+                        >
                             Получить бесплатно
                         </NuxtLink>
                     </div>
@@ -77,16 +85,19 @@
                             <button
                                 type="button"
                                 class="w-16 h-16 rounded-full bg-white shadow-xl flex items-center justify-center hover:scale-110 transition-transform"
-                                aria-label="Воспроизвести видео">
+                                aria-label="Воспроизвести видео"
+                            >
                                 <Icon
                                     name="mdi:play"
-                                    class="w-8 h-8 text-accent ml-1" />
+                                    class="w-8 h-8 text-accent ml-1"
+                                />
                             </button>
                         </div>
                         <div class="absolute -bottom-4 -right-4 bg-white rounded-xl shadow-lg px-4 py-2">
                             <BaseTag
                                 variant="white"
-                                class="text-sm font-semibold text-text">
+                                class="text-sm font-semibold text-text"
+                            >
                                 Бесплатно
                             </BaseTag>
                         </div>
@@ -109,6 +120,7 @@ const materials = [
         iconColor: 'text-accent',
         action: 'Смотреть',
         linkColor: 'text-accent',
+        link: '/blog?tags=песни',
     },
     {
         title: 'Упражнения',
@@ -118,6 +130,7 @@ const materials = [
         iconColor: 'text-lavender',
         action: 'Смотреть',
         linkColor: 'text-lavender',
+        link: '/blog?tags=упражнения',
     },
     {
         title: 'Конспекты занятий',
@@ -127,6 +140,7 @@ const materials = [
         iconColor: 'text-sage',
         action: 'Открыть',
         linkColor: 'text-sage',
+        link: '/blog?tags=конспекты',
     },
 ]
 

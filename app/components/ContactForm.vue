@@ -115,14 +115,14 @@
             </button>
 
             <p class="text-xs text-textLight text-center">
-                Нажимая кнопку, вы соглашаетесь
+                Нажимая кнопку, вы соглашаетесь с нашей
                 <a
-                    href="/"
+                    href="/media/privacy-policy.pdf"
                     target="_blank"
                     class="text-accent hover:underline"
                 >
-                    с политикой конфиденциальности
-                </a>.
+                    политикой конфиденциальности
+                </a>
             </p>
         </div>
     </Form>
