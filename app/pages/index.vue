@@ -16,5 +16,11 @@ useScrollReveal()
 
 useHead({
     title: 'Musicali - Музыкальный педагог и логопед Татьяна Ли',
+    meta: [
+        {
+            name: 'yandex-verification',
+            content: '100b43a81a9ef645',
+        },
+    ],
 })
 </script>
