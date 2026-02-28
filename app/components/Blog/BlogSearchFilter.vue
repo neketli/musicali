@@ -1,5 +1,5 @@
 <template>
-    <div class="bg-white rounded-2xl p-6 shadow-lg mb-8">
+    <div class="w-full max-w-full xl:max-w-5xl bg-white rounded-2xl p-6 shadow-lg">
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
             <!-- Search Input -->
             <div class="lg:col-span-2">
@@ -55,7 +55,7 @@
                     :internal-search="true"
                     :show-labels="false"
                     :allow-empty="true"
-                    @select="handleSelectTag"
+                    @update:model-value="handleSelectTag"
                 />
             </div>
 
@@ -80,7 +80,7 @@
                     :internal-search="true"
                     :show-labels="false"
                     :allow-empty="true"
-                    @select="handleSelectDateOption"
+                    @update:model-value="handleSelectDateOption"
                 />
             </div>
         </div>
@@ -195,16 +195,9 @@ const selectedDateOption = ref(
 
 const localDate = ref(props.date)
 
-let searchTimeout: NodeJS.Timeout | null = null
-
-const debouncedSearch = () => {
-    if (searchTimeout) {
-        clearTimeout(searchTimeout)
-    }
-    searchTimeout = setTimeout(() => {
-        emit('update:search', localSearch.value)
-    }, 300)
-}
+const debouncedSearch = useDebounceFn(() => {
+    emit('update:search', localSearch.value)
+}, 500)
 
 const clearSearch = () => {
     localSearch.value = ''

@@ -15,6 +15,7 @@
                 v-model:tags="tags"
                 v-model:date="date"
                 :all-tags="allTags"
+                class="mb-8 mx-auto"
             />
 
             <div

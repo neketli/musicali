@@ -1,6 +1,9 @@
 <template>
     <article class="reveal group cursor-pointer">
-        <div class="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow">
+        <NuxtLink
+            :to="link"
+            class="block bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow"
+        >
             <div :class="['aspect-video relative overflow-hidden', bg]">
                 <div class="absolute inset-0 flex items-center justify-center">
                     <Icon
@@ -17,7 +20,7 @@
                     {{ excerpt }}
                 </p>
             </div>
-        </div>
+        </NuxtLink>
     </article>
 </template>
 
@@ -27,5 +30,6 @@ defineProps<{
     excerpt: string
     bg: string
     icon: string
+    link: string
 }>()
 </script>

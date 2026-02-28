@@ -45,6 +45,7 @@ const posts = [
         bg: 'bg-gradient-to-br from-rose/30 to-orange-200',
         icon: 'lucide:leaf',
         class: 'reveal-delay-1',
+        link: '/blog/osenniy-sbornik-2025',
     },
     {
         title: 'Зимний сборник 2025',
@@ -52,6 +53,7 @@ const posts = [
         bg: 'bg-gradient-to-br from-blue-200 to-sky-100',
         icon: 'lucide:snowflake',
         class: 'reveal-delay-2',
+        link: '/blog/zimniy-sbornik-2025',
     },
     {
         title: 'Смелые шаги в музыкальном развитии',
@@ -59,6 +61,7 @@ const posts = [
         bg: 'bg-gradient-to-br from-lavender/30 to-purple-200',
         icon: 'lucide:drum',
         class: 'reveal-delay-3',
+        link: '/blog/smelie-shagi-v-muzykalnom-razvitii',
     },
 ]
 </script>
