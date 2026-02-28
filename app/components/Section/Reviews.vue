@@ -1,7 +1,7 @@
 <template>
     <section
         id="reviews"
-        class="py-16 md:py-20 bg-white relative overflow-hidden"
+        class="py-20 md:py-24 bg-white relative overflow-hidden"
     >
         <div class="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-blush/20 to-transparent" />
 

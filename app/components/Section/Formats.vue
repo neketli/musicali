@@ -1,5 +1,5 @@
 <template>
-    <section class="py-16 md:py-20 bg-gradient-to-b from-white via-blush/20 to-white">
+    <section class="py-20 md:py-24 bg-gradient-to-b from-white via-blush/20 to-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                 <BaseTag

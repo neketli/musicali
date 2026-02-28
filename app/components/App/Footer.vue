@@ -22,36 +22,15 @@
                         Навигация
                     </h4>
                     <ul class="space-y-2">
-                        <li>
+                        <li
+                            v-for="link in navLinks"
+                            :key="link.href"
+                        >
                             <NuxtLink
-                                href="#about"
+                                :to="link.href"
                                 class="text-white/60 hover:text-white transition-colors"
                             >
-                                Обо мне
-                            </NuxtLink>
-                        </li>
-                        <li>
-                            <NuxtLink
-                                href="#services"
-                                class="text-white/60 hover:text-white transition-colors"
-                            >
-                                Услуги
-                            </NuxtLink>
-                        </li>
-                        <li>
-                            <NuxtLink
-                                href="#materials"
-                                class="text-white/60 hover:text-white transition-colors"
-                            >
-                                Материалы
-                            </NuxtLink>
-                        </li>
-                        <li>
-                            <NuxtLink
-                                href="#reviews"
-                                class="text-white/60 hover:text-white transition-colors"
-                            >
-                                Отзывы
+                                {{ link.label }}
                             </NuxtLink>
                         </li>
                     </ul>
@@ -105,4 +84,31 @@
 
 <script setup lang="ts">
 const { telegram, email, phoneFormatted, phone } = useContacts()
+
+const navLinks = [
+    {
+        href: '/#about',
+        anchor: '#about',
+        label: 'Обо мне',
+    },
+    {
+        href: '/#services',
+        anchor: '#services',
+        label: 'Услуги',
+    },
+    {
+        href: '/#materials',
+        anchor: '#materials',
+        label: 'Материалы',
+    },
+    {
+        href: '/#reviews',
+        anchor: '#reviews',
+        label: 'Отзывы',
+    },
+    {
+        href: '/blog',
+        label: 'Блог',
+    },
+]
 </script>

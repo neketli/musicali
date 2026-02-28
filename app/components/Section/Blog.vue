@@ -1,7 +1,7 @@
 <template>
     <section
         id="blog"
-        class="py-16 md:py-20 bg-gradient-to-b from-white via-milk to-white"
+        class="py-20 md:py-24 bg-gradient-to-b from-white via-milk to-white"
     >
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col md:flex-row justify-between items-center mb-12">

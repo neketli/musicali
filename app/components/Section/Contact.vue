@@ -1,7 +1,7 @@
 <template>
     <section
         id="contact"
-        class="py-16 md:py-20 bg-white relative overflow-hidden"
+        class="py-20 md:py-24 bg-white relative overflow-hidden"
     >
         <div class="absolute top-0 right-0 w-96 h-96 bg-rose/10 rounded-full blur-3xl" />
         <div class="absolute bottom-0 left-0 w-96 h-96 bg-lavender/10 rounded-full blur-3xl" />

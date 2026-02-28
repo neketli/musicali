@@ -1,7 +1,7 @@
 <template>
     <section
         id="services"
-        class="py-16 md:py-20 bg-gradient-to-b from-white via-milk to-white relative overflow-hidden"
+        class="py-20 md:py-24 bg-gradient-to-b from-white via-milk to-white relative overflow-hidden"
     >
         <div class="absolute top-20 left-0 w-64 h-64 bg-rose/20 rounded-full blur-3xl" />
         <div class="absolute bottom-20 right-0 w-80 h-80 bg-lavender/20 rounded-full blur-3xl" />
