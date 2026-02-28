@@ -127,7 +127,7 @@
                                             class="w-32 h-32 mx-auto rounded-full bg-gradient-to-br from-rose to-lavender flex items-center justify-center mb-4"
                                         >
                                             <Icon
-                                                name="mdi:account"
+                                                name="lucide:user"
                                                 class="w-16 h-16 text-white"
                                             />
                                         </div>
@@ -148,7 +148,7 @@
                                 class="w-12 h-12 rounded-full bg-sage/30 flex items-center justify-center"
                             >
                                 <Icon
-                                    name="mdi:check-circle"
+                                    name="lucide:check"
                                     class="w-6 h-6 text-sage-700"
                                 />
                             </div>
@@ -171,7 +171,7 @@
                                 class="w-12 h-12 rounded-full bg-gradient-to-br from-rose via-lavender to-sage flex items-center justify-center"
                             >
                                 <Icon
-                                    name="mdi:telegram"
+                                    :name="telegram.icon"
                                     class="w-6 h-6 text-white"
                                 />
                             </div>

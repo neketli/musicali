@@ -1,7 +1,8 @@
 <template>
     <section
         id="blog"
-        class="py-20 md:py-28 bg-gradient-to-b from-white via-milk to-white">
+        class="py-16 md:py-20 bg-gradient-to-b from-white via-milk to-white"
+    >
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col md:flex-row justify-between items-center mb-12">
                 <div class="text-center md:text-left mb-6 md:mb-0">
@@ -14,11 +15,13 @@
                 </div>
                 <NuxtLink
                     href="/blog"
-                    class="reveal reveal-delay-2 text-accent font-semibold hover:underline flex items-center gap-2">
+                    class="reveal reveal-delay-2 text-accent font-semibold hover:underline flex items-center gap-2"
+                >
                     Смотреть все
                     <Icon
-                        name="mdi:arrow-right"
-                        class="w-4 h-4" />
+                        name="lucide:arrow-right"
+                        class="w-4 h-4"
+                    />
                 </NuxtLink>
             </div>
 
@@ -40,21 +43,21 @@ const posts = [
         title: 'Осенний сборник 2025',
         excerpt: 'Песенки и упражнения на осеннюю тематику',
         bg: 'bg-gradient-to-br from-rose/30 to-orange-200',
-        icon: 'mdi:leaf-maple',
+        icon: 'lucide:leaf',
         class: 'reveal-delay-1',
     },
     {
         title: 'Зимний сборник 2025',
         excerpt: 'Песни, упражнения, игры на зимнюю тематику',
         bg: 'bg-gradient-to-br from-blue-200 to-sky-100',
-        icon: 'mdi:snowflake',
+        icon: 'lucide:snowflake',
         class: 'reveal-delay-2',
     },
     {
         title: 'Смелые шаги в музыкальном развитии',
         excerpt: 'Сборник с рабочими листами и музыкой',
         bg: 'bg-gradient-to-br from-lavender/30 to-purple-200',
-        icon: 'mdi:music-circle-outline',
+        icon: 'lucide:drum',
         class: 'reveal-delay-3',
     },
 ]

@@ -1,7 +1,8 @@
 <template>
     <section
         id="services"
-        class="py-20 md:py-28 bg-gradient-to-b from-white via-milk to-white relative overflow-hidden">
+        class="py-16 md:py-20 bg-gradient-to-b from-white via-milk to-white relative overflow-hidden"
+    >
         <div class="absolute top-20 left-0 w-64 h-64 bg-rose/20 rounded-full blur-3xl" />
         <div class="absolute bottom-20 right-0 w-80 h-80 bg-lavender/20 rounded-full blur-3xl" />
 
@@ -35,7 +36,7 @@ const delayClasses: string[] = ['', 'reveal-delay-1', 'reveal-delay-2', '', 'rev
 
 const services = [
     {
-        icon: 'mdi:emoticon-happy-outline',
+        icon: 'lucide:baby',
         iconBg: 'from-rose/30 to-rose/10',
         iconColor: 'text-accent',
         title: 'Раннее развитие',
@@ -43,7 +44,7 @@ const services = [
         items: ['Музыкальные игры', 'Сенсорное развитие', 'Развитие мелкой моторики'],
     },
     {
-        icon: 'mdi:microphone-outline',
+        icon: 'lucide:mic',
         iconBg: 'from-lavender/30 to-lavender/10',
         iconColor: 'text-lavender',
         title: 'Развитие речи',
@@ -51,7 +52,7 @@ const services = [
         items: ['Постановка звуков', 'Артикуляционная гимнастика', 'Развитие словарного запаса'],
     },
     {
-        icon: 'mdi:music-note-outline',
+        icon: 'lucide:music-2',
         iconBg: 'from-sage/30 to-sage/10',
         iconColor: 'text-sage',
         title: 'Слух и ритм',
@@ -59,7 +60,7 @@ const services = [
         items: ['Ритмические упражнения', 'Развитие слуха', 'Вокал для детей'],
     },
     {
-        icon: 'mdi:lightbulb-outline',
+        icon: 'lucide:lightbulb',
         iconBg: 'from-accent/30 to-accent/10',
         iconColor: 'text-accent',
         title: 'Психические процессы',
@@ -67,7 +68,7 @@ const services = [
         items: ['Тренировка памяти', 'Развитие внимания', 'Креативное мышление'],
     },
     {
-        icon: 'mdi:account-group-outline',
+        icon: 'lucide:users',
         iconBg: 'from-rose/30 to-rose/10',
         iconColor: 'text-rose',
         title: 'Консультации для педагогов',

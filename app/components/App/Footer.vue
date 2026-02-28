@@ -6,7 +6,7 @@
                     <div class="flex items-center gap-2 mb-4">
                         <div class="w-10 h-10 rounded-full bg-gradient-to-br from-rose to-lavender flex items-center justify-center">
                             <Icon
-                                name="mdi:music"
+                                name="lucide:music"
                                 class="w-5 h-5 text-white"
                             />
                         </div>

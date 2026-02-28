@@ -1,7 +1,7 @@
 <template>
     <section
         id="reviews"
-        class="py-20 md:py-28 bg-white relative overflow-hidden"
+        class="py-16 md:py-20 bg-white relative overflow-hidden"
     >
         <div class="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-blush/20 to-transparent" />
 
@@ -38,7 +38,7 @@
                                         <Icon
                                             v-for="(_, starIndex) in 5"
                                             :key="starIndex"
-                                            name="mdi:star"
+                                            name="line-md:star-alt-filled"
                                             class="w-5 h-5 text-accent"
                                         />
                                     </div>
@@ -67,7 +67,7 @@
                         @click="handlePrev"
                     >
                         <Icon
-                            name="mdi:chevron-left"
+                            name="lucide:chevron-left"
                             class="w-5 h-5 text-text"
                         />
                     </button>
@@ -88,7 +88,7 @@
                         @click="handleNext"
                     >
                         <Icon
-                            name="mdi:chevron-right"
+                            name="lucide:chevron-right"
                             class="w-5 h-5 text-text"
                         />
                     </button>
@@ -96,7 +96,8 @@
             </div>
 
             <div
-                class="reveal mt-16 grid md:grid-cols-4 gap-6">
+                class="reveal mt-16 grid md:grid-cols-4 gap-6"
+            >
                 <div
                     v-for="(stat, index) in stats"
                     :key="stat.label"

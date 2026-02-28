@@ -1,7 +1,7 @@
 <template>
     <section
         id="materials"
-        class="py-20 md:py-28 bg-white relative overflow-hidden"
+        class="py-16 md:py-20 bg-white relative overflow-hidden"
     >
         <div class="absolute -top-32 -right-32 w-96 h-96 bg-lavender/10 rounded-full blur-3xl" />
         <div class="absolute -bottom-32 -left-32 w-96 h-96 bg-rose/10 rounded-full blur-3xl" />
@@ -42,7 +42,7 @@
                         <div :class="['flex items-center gap-2 font-medium text-sm group-hover:gap-3 transition-all', m.linkColor]">
                             <span>{{ m.action }}</span>
                             <Icon
-                                name="mdi:arrow-right"
+                                name="lucide:arrow-right"
                                 class="w-4 h-4"
                             />
                         </div>
@@ -66,7 +66,7 @@
                                 class="flex items-center gap-3 text-textLight"
                             >
                                 <Icon
-                                    name="mdi:check"
+                                    name="lucide:check"
                                     class="w-5 h-5 text-sage flex-shrink-0"
                                 />
                                 {{ item }}
@@ -88,7 +88,7 @@
                                 aria-label="Воспроизвести видео"
                             >
                                 <Icon
-                                    name="mdi:play"
+                                    name="lucide:play"
                                     class="w-8 h-8 text-accent ml-1"
                                 />
                             </button>
@@ -116,7 +116,7 @@ const materials = [
         title: 'Детские песни',
         description: 'Авторские песни для развития речи, слуха и музыкальности',
         bg: 'bg-gradient-to-br from-rose/20 to-blush',
-        icon: 'mdi:music',
+        icon: 'lucide:music',
         iconColor: 'text-accent',
         action: 'Смотреть',
         linkColor: 'text-accent',
@@ -126,7 +126,7 @@ const materials = [
         title: 'Упражнения',
         description: 'Рабочие листы с музыкой для развития внимания,концентрации, моторики',
         bg: 'bg-gradient-to-br from-lavender/20 to-sageLight/30',
-        icon: 'mdi:clipboard-text',
+        icon: 'lucide:clipboard-list',
         iconColor: 'text-lavender',
         action: 'Смотреть',
         linkColor: 'text-lavender',
@@ -136,7 +136,7 @@ const materials = [
         title: 'Конспекты занятий',
         description: 'Готовые конспекты для педагогов и родителей',
         bg: 'bg-gradient-to-br from-sage/20 to-blush/30',
-        icon: 'mdi:book-open-variant',
+        icon: 'lucide:book-marked',
         iconColor: 'text-sage',
         action: 'Открыть',
         linkColor: 'text-sage',

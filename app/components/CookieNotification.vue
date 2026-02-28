@@ -16,7 +16,7 @@
                     <div class="flex-shrink-0">
                         <div class="w-10 h-10 rounded-full bg-accent/20 flex items-center justify-center">
                             <Icon
-                                name="mdi:cookie"
+                                name="lucide:cookie"
                                 class="w-5 h-5 text-accent"
                             />
                         </div>
@@ -32,12 +32,14 @@
                             <a
                                 href="/media/privacy-policy.pdf"
                                 target="_blank"
+                                rel="noopener noreferrer"
                                 class="text-accent hover:underline"
                             >
                                 политикой конфиденциальности
                             </a> и <a
                                 href="/media/terms-of-service.pdf"
                                 target="_blank"
+                                rel="noopener noreferrer"
                                 class="text-accent hover:underline"
                             >
                                 пользовательским соглашением
@@ -53,7 +55,7 @@
                             @click="isVisible = false"
                         >
                             <Icon
-                                name="mdi:close"
+                                name="lucide:x"
                                 class="w-4 h-4"
                             />
                         </button>

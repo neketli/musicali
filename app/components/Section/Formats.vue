@@ -1,10 +1,11 @@
 <template>
-    <section class="py-20 md:py-28 bg-gradient-to-b from-white via-blush/20 to-white">
+    <section class="py-16 md:py-20 bg-gradient-to-b from-white via-blush/20 to-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                 <BaseTag
                     variant="white"
-                    class="reveal mb-6">
+                    class="reveal mb-6"
+                >
                     Форматы
                 </BaseTag>
                 <h2 class="reveal reveal-delay-1 font-display text-3xl md:text-4xl lg:text-5xl font-semibold text-text mb-6">
@@ -22,19 +23,21 @@
                     :class="[
                         'reveal bg-white rounded-3xl p-8 shadow-sm hover:shadow-xl transition-shadow border text-center',
                         f.featured ? 'border-2 border-accent/30 shadow-xl relative' : 'border-blush/20',
-                        i === 1 ? 'reveal-delay-1' : i === 2 ? 'reveal-delay-2' : ''
+                        i === 1 ? 'reveal-delay-1' : i === 2 ? 'reveal-delay-2' : '',
                     ]"
                 >
                     <BaseTag
                         v-if="f.featured"
                         variant="accent"
-                        class="absolute -top-3 left-1/2 -translate-x-1/2">
+                        class="absolute -top-3 left-1/2 -translate-x-1/2"
+                    >
                         Популярно
                     </BaseTag>
                     <div :class="['w-20 h-20 mx-auto rounded-full flex items-center justify-center mb-6', f.iconBg]">
                         <Icon
                             :name="f.icon"
-                            class="w-10 h-10 text-white" />
+                            class="w-10 h-10 text-white"
+                        />
                     </div>
                     <h3 class="font-display text-xl font-semibold text-text mb-3">
                         {{ f.title }}
@@ -47,14 +50,16 @@
                     </div>
                     <div
                         v-if="f.period"
-                        class="text-sm text-textLight">
+                        class="text-sm text-textLight"
+                    >
                         {{ f.period }}
                     </div>
                     <NuxtLink
                         v-if="f.cta"
                         href="#contact"
                         class="btn-primary mt-6 block py-3 rounded-full text-white font-semibold"
-                        @click.prevent="scrollTo('#contact')">
+                        @click.prevent="scrollTo('#contact')"
+                    >
                         Записаться
                     </NuxtLink>
                 </div>
@@ -72,7 +77,7 @@ const formats = [
         description: 'Возможность самостоятельно заниматься с ребёнком по авторским материалам',
         price: '0 ₽',
         iconBg: 'bg-gradient-to-br from-accent to-rose',
-        icon: 'mdi:home',
+        icon: 'lucide:house',
         cta: {
             title: 'Получить',
             href: '#materials',
@@ -84,7 +89,7 @@ const formats = [
         price: 'от 1500 ₽',
         period: 'за один час',
         iconBg: 'bg-gradient-to-br from-lavender to-accent',
-        icon: 'mdi:video',
+        icon: 'lucide:video',
         featured: true,
         cta: {
             title: 'Записаться',
@@ -97,7 +102,7 @@ const formats = [
         price: 'от 10 000 ₽',
         period: 'за 8 консультаций',
         iconBg: 'bg-gradient-to-br from-sage to-lavender',
-        icon: 'mdi:book-open-variant',
+        icon: 'lucide:folder-kanban',
         cta: {
             title: 'Записаться',
             href: '#contact',

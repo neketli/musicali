@@ -1,16 +1,18 @@
 <template>
-    <NuxtImg
-        :src="processedSrc"
-        :alt="alt"
-        :width="width"
-        :height="height"
-        :format="format"
-        :quality="quality"
-        loading="lazy"
-        placeholder="/img/placeholder.png"
-        class="prose-img rounded-lg shadow-md object-cover object-center m-2"
-        placeholder-class="animate-pulse"
-    />
+    <div class="p-2">
+        <NuxtImg
+            :src="processedSrc"
+            :alt="alt"
+            :width="width"
+            :height="height"
+            :format="format"
+            :quality="quality"
+            loading="lazy"
+            placeholder="/img/placeholder.png"
+            class="prose-img rounded-lg shadow-md object-cover"
+            placeholder-class="animate-pulse"
+        />
+    </div>
 </template>
 
 <script setup lang="ts">

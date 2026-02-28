@@ -7,8 +7,9 @@
             class="w-16 h-16 rounded-full bg-white flex items-center justify-center mb-6 shadow-lg"
         >
             <Icon
-                name="mdi:chat-outline"
-                class="w-8 h-8 text-accent" />
+                name="lucide:message-circle"
+                class="w-8 h-8 text-accent"
+            />
         </div>
         <h3 class="font-display text-xl font-semibold text-text mb-3">
             {{ service.title }}
@@ -56,8 +57,9 @@
                 class="flex items-center gap-2"
             >
                 <Icon
-                    name="mdi:check"
-                    class="w-4 h-4 text-sage" />
+                    name="lucide:check"
+                    class="w-4 h-4 text-sage"
+                />
                 {{ item }}
             </li>
         </ul>

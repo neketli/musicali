@@ -119,6 +119,7 @@
                 <a
                     href="/media/privacy-policy.pdf"
                     target="_blank"
+                    rel="noopener noreferrer"
                     class="text-accent hover:underline"
                 >
                     политикой конфиденциальности

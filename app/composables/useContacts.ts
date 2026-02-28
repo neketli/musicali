@@ -25,7 +25,7 @@ export function useContacts(): ContactInfo {
         telegram: {
             name: 'Telegram',
             url: TELEGRAM_URL,
-            icon: 'mdi:telegram',
+            icon: 'line-md:telegram',
             label: '@musicali_teacher',
         },
     }

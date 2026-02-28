@@ -1,7 +1,7 @@
 <template>
     <section
         id="contact"
-        class="py-20 md:py-28 bg-white relative overflow-hidden"
+        class="py-16 md:py-20 bg-white relative overflow-hidden"
     >
         <div class="absolute top-0 right-0 w-96 h-96 bg-rose/10 rounded-full blur-3xl" />
         <div class="absolute bottom-0 left-0 w-96 h-96 bg-lavender/10 rounded-full blur-3xl" />
@@ -25,7 +25,7 @@
                         <div class="flex items-center gap-4">
                             <div class="w-12 h-12 rounded-2xl bg-accent/20 flex items-center justify-center">
                                 <Icon
-                                    name="mdi:email-outline"
+                                    name="lucide:mail"
                                     class="w-6 h-6 text-accent"
                                 />
                             </div>
@@ -44,7 +44,7 @@
                         <div class="flex items-center gap-4">
                             <div class="w-12 h-12 rounded-2xl bg-sage/20 flex items-center justify-center">
                                 <Icon
-                                    name="mdi:telegram"
+                                    :name="contacts.telegram.icon"
                                     class="w-6 h-6 text-sage"
                                 />
                             </div>

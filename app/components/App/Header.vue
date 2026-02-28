@@ -14,7 +14,7 @@
                             class="w-10 h-10 rounded-full bg-gradient-to-br from-rose to-lavender flex items-center justify-center"
                         >
                             <Icon
-                                name="mdi:music"
+                                name="lucide:music"
                                 class="w-5 h-5 text-white"
                             />
                         </div>
@@ -43,7 +43,7 @@
                         @click="mobileOpen = true"
                     >
                         <Icon
-                            name="mdi:menu"
+                            name="lucide:menu"
                             class="w-6 h-6 text-text"
                         />
                     </BaseButton>
@@ -65,7 +65,7 @@
                             @click="mobileOpen = false"
                         >
                             <Icon
-                                name="mdi:close"
+                                name="lucide:x"
                                 class="w-6 h-6 text-text"
                             />
                         </BaseButton>
@@ -92,7 +92,7 @@
                                 aria-label="Telegram"
                             >
                                 <Icon
-                                    name="mdi:telegram"
+                                    :name="telegram.icon"
                                     class="w-5 h-5 text-text"
                                 />
                             </BaseButton>
