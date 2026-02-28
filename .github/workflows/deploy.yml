@@ -1,0 +1,38 @@
+name: Build and Deploy to production
+
+on:
+    push:
+        branches: [main]
+    workflow_dispatch:
+        inputs:
+            logLevel:
+                description: "Log level"
+                required: true
+                default: "warning"
+
+jobs:
+    compose-up:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v4
+
+            - name: Build and run app on VDS
+              uses: appleboy/ssh-action@master
+              env:
+                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+              with:
+                  host: ${{ secrets.HOST_ADDRESS }}
+                  username: ${{ secrets.HOST_USER }}
+                  password: ${{ secrets.HOST_PASSWORD }}
+                  key: ${{ secrets.HOST_KEY }}
+                  envs: GITHUB_TOKEN
+                  command_timeout: 30m
+                  script: |
+                      cd ~/opt/musicali
+                      git checkout main && git pull origin
+                      export HTTP_PROXY=https://dockerhub.timeweb.cloud/
+                      export HTTPS_PROXY=https://dockerhub.timeweb.cloud/
+                      docker compose -f docker-compose.yml up --build -d
+                      if [ $? -ne 0 ]; then echo "❌ ERROR: build failed" && exit 1; fi
+                      docker system prune -a -f
