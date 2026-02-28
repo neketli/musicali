@@ -71,8 +71,7 @@ export default defineNuxtConfig({
 
     robots: {
         disallow: [
-            '/api',
-            '/private',
+            '/private_pages',
         ],
     },
 

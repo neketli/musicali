@@ -78,9 +78,9 @@
 const route = useRoute()
 const slug = route.params.slug
 
-const { data: post } = await useAsyncData(`private-${slug}`, () =>
-    queryCollection('private')
-        .path(`/private/${slug}`)
+const { data: post } = await useAsyncData(`private_pages-${slug}`, () =>
+    queryCollection('private_pages')
+        .path(`/private_pages/${slug}`)
         .first(),
 )
 

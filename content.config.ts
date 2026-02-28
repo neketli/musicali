@@ -15,9 +15,9 @@ export default defineContentConfig({
                 tags: z.array(z.string()).optional(),
             }),
         }),
-        private: defineCollection({
+        private_pages: defineCollection({
             type: 'page',
-            source: 'private/**/*.md',
+            source: 'private_pages/**/*.md',
             schema: z.object({
                 title: z.string(),
                 description: z.string(),
