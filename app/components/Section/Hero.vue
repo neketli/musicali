@@ -89,55 +89,12 @@
                                 <div
                                     class="w-full h-full flex items-center justify-center relative"
                                 >
-                                    <svg
-                                        class="absolute inset-0 w-full h-full opacity-10"
-                                        viewBox="0 0 400 500"
-                                    >
-                                        <defs>
-                                            <pattern
-                                                id="musicPattern"
-                                                x="0"
-                                                y="0"
-                                                width="60"
-                                                height="60"
-                                                patternUnits="userSpaceOnUse"
-                                            >
-                                                <circle
-                                                    cx="10"
-                                                    cy="10"
-                                                    r="2"
-                                                    fill="#C9A9A0"
-                                                />
-                                                <circle
-                                                    cx="50"
-                                                    cy="40"
-                                                    r="1.5"
-                                                    fill="#D4C4E0"
-                                                />
-                                            </pattern>
-                                        </defs>
-                                        <rect
-                                            width="400"
-                                            height="500"
-                                            fill="url(#musicPattern)"
-                                        />
-                                    </svg>
-                                    <div class="text-center z-10">
-                                        <div
-                                            class="w-32 h-32 mx-auto rounded-full bg-gradient-to-br from-rose to-lavender flex items-center justify-center mb-4"
-                                        >
-                                            <Icon
-                                                name="lucide:user"
-                                                class="w-16 h-16 text-white"
-                                            />
-                                        </div>
-                                        <p class="font-display text-2xl text-text/60">
-                                            Татьяна Ли
-                                        </p>
-                                        <p class="text-sm text-textLight/60 mt-1">
-                                            Педагог с душой
-                                        </p>
-                                    </div>
+                                    <NuxtImg
+                                        src="/img/hero.webp"
+                                        alt="Татьяна Ли"
+                                        format="webp"
+                                        class="w-full object-cover z-3 absolute"
+                                    />
                                 </div>
                             </div>
                         </div>
