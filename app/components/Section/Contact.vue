@@ -78,7 +78,10 @@
 const contacts = useContacts()
 
 async function handleSubmit(values: Record<string, unknown>) {
-    console.log('Form submitted:', values)
+    await useFetch('/api/contact', {
+        method: 'post',
+        body: values,
+    })
 }
 </script>
 
