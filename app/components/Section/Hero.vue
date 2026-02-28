@@ -106,18 +106,21 @@
                                                     cx="10"
                                                     cy="10"
                                                     r="2"
-                                                    fill="#C9A9A0" />
+                                                    fill="#C9A9A0"
+                                                />
                                                 <circle
                                                     cx="50"
                                                     cy="40"
                                                     r="1.5"
-                                                    fill="#D4C4E0" />
+                                                    fill="#D4C4E0"
+                                                />
                                             </pattern>
                                         </defs>
                                         <rect
                                             width="400"
                                             height="500"
-                                            fill="url(#musicPattern)" />
+                                            fill="url(#musicPattern)"
+                                        />
                                     </svg>
                                     <div class="text-center z-10">
                                         <div
@@ -125,7 +128,8 @@
                                         >
                                             <Icon
                                                 name="mdi:account"
-                                                class="w-16 h-16 text-white" />
+                                                class="w-16 h-16 text-white"
+                                            />
                                         </div>
                                         <p class="font-display text-2xl text-text/60">
                                             Татьяна Ли
@@ -145,7 +149,8 @@
                             >
                                 <Icon
                                     name="mdi:check-circle"
-                                    class="w-6 h-6 text-sage-700" />
+                                    class="w-6 h-6 text-sage-700"
+                                />
                             </div>
                             <div>
                                 <div class="font-semibold text-text text-sm">
@@ -157,7 +162,7 @@
                             </div>
                         </div>
                         <a
-                            href="https://instagram.com/musicali_teacher"
+                            :href="telegram.url"
                             target="_blank"
                             rel="noopener noreferrer"
                             class="absolute -top-4 -right-4 bg-white rounded-2xl shadow-lg p-4 flex items-center gap-3 hover:scale-105 transition-transform"
@@ -166,12 +171,13 @@
                                 class="w-12 h-12 rounded-full bg-gradient-to-br from-rose via-lavender to-sage flex items-center justify-center"
                             >
                                 <Icon
-                                    name="mdi:instagram"
-                                    class="w-6 h-6 text-white" />
+                                    name="mdi:telegram"
+                                    class="w-6 h-6 text-white"
+                                />
                             </div>
                             <div>
                                 <div class="font-semibold text-text text-sm">
-                                    @musicali_teacher
+                                    {{ telegram.label }}
                                 </div>
                                 <div class="text-textLight text-xs">Подписаться</div>
                             </div>
@@ -198,6 +204,7 @@
 </template>
 
 <script setup lang="ts">
+const { telegram } = useContacts()
 const { scrollTo } = useSmoothScroll()
 </script>
 

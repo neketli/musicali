@@ -85,18 +85,6 @@
                     <div class="mt-auto">
                         <div class="flex justify-center gap-4 mt-6">
                             <BaseButton
-                                :href="instagram.url"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                class="p-3 rounded-full bg-blush hover:bg-rose transition-colors"
-                                aria-label="Instagram"
-                            >
-                                <Icon
-                                    name="mdi:instagram"
-                                    class="w-5 h-5 text-text"
-                                />
-                            </BaseButton>
-                            <BaseButton
                                 :href="telegram.url"
                                 target="_blank"
                                 rel="noopener noreferrer"
@@ -118,7 +106,7 @@
 
 <script setup lang="ts">
 const { scrollTo, scrollToTop } = useSmoothScroll()
-const { instagram, telegram } = useContacts()
+const { telegram } = useContacts()
 
 const navLinks = [
     {

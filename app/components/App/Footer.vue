@@ -86,18 +86,6 @@
                 </p>
                 <div class="flex gap-4">
                     <a
-                        :href="instagram.url"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors"
-                        :aria-label="instagram.name"
-                    >
-                        <Icon
-                            :name="instagram.icon"
-                            class="w-5 h-5 text-white"
-                        />
-                    </a>
-                    <a
                         :href="telegram.url"
                         target="_blank"
                         rel="noopener noreferrer"
@@ -116,5 +104,5 @@
 </template>
 
 <script setup lang="ts">
-const { instagram, telegram, email, phoneFormatted, phone } = useContacts()
+const { telegram, email, phoneFormatted, phone } = useContacts()
 </script>

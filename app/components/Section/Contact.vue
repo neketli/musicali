@@ -44,21 +44,21 @@
                         <div class="flex items-center gap-4">
                             <div class="w-12 h-12 rounded-2xl bg-sage/20 flex items-center justify-center">
                                 <Icon
-                                    name="mdi:instagram"
+                                    name="mdi:telegram"
                                     class="w-6 h-6 text-sage"
                                 />
                             </div>
                             <div>
                                 <div class="text-sm text-textLight">
-                                    {{ contacts.instagram.name }}
+                                    {{ contacts.telegram.name }}
                                 </div>
                                 <a
-                                    :href="contacts.instagram.url"
+                                    :href="contacts.telegram.url"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     class="text-text font-medium hover:text-accent transition-colors"
                                 >
-                                    {{ contacts.instagram.label }}
+                                    {{ contacts.telegram.label }}
                                 </a>
                             </div>
                         </div>
