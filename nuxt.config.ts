@@ -48,11 +48,11 @@ export default defineNuxtConfig({
     hub: {
         blob: {
             driver: 's3',
-            accessKeyId: process.env.NUXT_S3_ACCESS_KEY || '',
-            secretAccessKey: process.env.NUXT_S3_SECRET_KEY || '',
-            bucket: process.env.NUXT_S3_BUCKET || '',
-            region: process.env.NUXT_S3_REGION || '',
-            endpoint: process.env.NUXT_S3_ENDPOINT || '',
+            accessKeyId: process.env.NUXT_S3_ACCESS_KEY,
+            secretAccessKey: process.env.NUXT_S3_SECRET_KEY,
+            bucket: process.env.NUXT_S3_BUCKET,
+            region: process.env.NUXT_S3_REGION,
+            endpoint: process.env.NUXT_S3_ENDPOINT,
         },
     },
     eslint: {
@@ -76,7 +76,6 @@ export default defineNuxtConfig({
     },
 
     studio: {
-        dev: false,
         repository: {
             provider: 'github',
             owner: 'neketli',
