@@ -9,8 +9,6 @@ export default defineNuxtConfig({
         '@nuxt/icon',
         '@nuxt/fonts',
         '@nuxtjs/tailwindcss',
-        '@nuxtjs/robots',
-        '@nuxtjs/sitemap',
         'nuxt-studio',
         '@vueuse/nuxt',
         '@nuxtjs/seo',

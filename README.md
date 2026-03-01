@@ -1,75 +1,67 @@
-# Nuxt Content Starter
+# Musicali
 
-Look at the [Nuxt Content documentation](https://content.nuxt.com) to learn more.
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
+[![Nuxt](https://img.shields.io/badge/Nuxt-4+-4FC08D?logo=nuxt)](https://vuejs.org/)
 
-## Setup
+Nuxt Content application built with Nuxt framework.
 
-Make sure to install dependencies:
+## ✨ Features
 
-```bash
-# npm
-npm install
+- **Nuxt Content** - Git-based CMS for Nuxt
+- **Nuxt Studio** - Self-hosted content editor
+- **Nuxt Hub** - Use static files as blobs from S3
+- **SSR** - Server render, actions and SEO support
 
-# pnpm
-pnpm install
+## 🚀 Quick Start
 
-# yarn
-yarn install
+### Prerequisites
 
-# bun
-bun install
-```
+- [Node.js](https://nodejs.org/) (v22 or higher)
+- Package manager: `npm`, `pnpm`, `yarn`, or `bun`
 
-## Development Server
+### Installation
+
+1. **Clone the repository**
+   ```bash
+   git clone <repository-url>
+   cd musicali
+   ```
+
+2. **Install dependencies**
+   ```bash
+   # npm
+   npm install
+   ```
+
+3. **Set up environment variables**
+   ```bash
+   cp .env.example .env
+   ```
+
+### Development
 
 Start the development server on `http://localhost:3000`:
 
 ```bash
 # npm
 npm run dev
-
-# pnpm
-pnpm dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
 ```
-
-## Production
 
 Build the application for production:
 
 ```bash
 # npm
 npm run build
-
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
 ```
 
-Locally preview production build:
+Preview production build locally:
 
 ```bash
 # npm
 npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
 ```
 
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+## 📖 Documentation
+
+- [Nuxt Documentation](https://nuxt.com/docs)
+- [Nuxt Content Documentation](https://content.nuxt.com)
