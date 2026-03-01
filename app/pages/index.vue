@@ -19,7 +19,7 @@ useHead({
     meta: [
         {
             name: 'yandex-verification',
-            content: '100b43a81a9ef645',
+            content: '00981319b00a4eeb',
         },
     ],
 })
