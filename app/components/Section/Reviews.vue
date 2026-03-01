@@ -31,7 +31,7 @@
                         <div :class="['rounded-3xl p-8 md:p-12', item.bg]">
                             <div class="flex flex-col md:flex-row gap-8 items-center">
                                 <div :class="['w-24 h-24 rounded-full flex items-center justify-center flex-shrink-0', item.avatarBg]">
-                                    <span class="font-display text-3xl text-white font-semibold">{{ item.initial }}</span>
+                                    <span class="font-display text-3xl text-white font-semibold">{{ item.name.charAt(0).toUpperCase() }}</span>
                                 </div>
                                 <div class="flex-1 text-center md:text-left">
                                     <div class="flex justify-center md:justify-start gap-1 mb-4">
@@ -45,13 +45,8 @@
                                     <p class="text-text leading-relaxed mb-6 text-lg">
                                         "{{ item.quote }}"
                                     </p>
-                                    <div>
-                                        <div class="font-semibold text-text">
-                                            {{ item.name }}
-                                        </div>
-                                        <div class="text-sm text-textLight">
-                                            {{ item.role }}
-                                        </div>
+                                    <div class="font-semibold text-text">
+                                        {{ item.name }}
                                     </div>
                                 </div>
                             </div>
@@ -130,28 +125,48 @@ import 'keen-slider/keen-slider.min.css'
 const reviews = [
     {
         quote:
-      'Татьяна — невероятный педагог! Мой сын за 3 месяца научился произносить звуки, с которыми мы боролись год. Занятия проходят весело, ребёнок всегда ждёт следующего урока. Рекомендую всем родителям!',
-        name: 'Мария К.',
-        role: 'Мама Артёма, 5 лет',
-        initial: 'М',
+      'Огромная благодарность Татьяне, за такой чудесный материал, она просто Профессионал с большой буквы, и человек с большим сердцем, буду с удовольствием применять на своих воспитанниках!',
+        name: 'sayfutdinovaelana',
         bg: 'bg-gradient-to-br from-milk to-blush/30',
         avatarBg: 'bg-gradient-to-br from-rose to-lavender',
     },
     {
         quote:
-      'Дочка занималась с Татьяной онлайн, и я поражена результатами! Через полгода занятий у ребёнка появился абсолютный музыкальный слух, и речь стала гораздо чище. Спасибо за профессионализм!',
-        name: 'Анна П.',
-        role: 'Мама Софии, 6 лет',
-        initial: 'А',
+      'У моего ребенка есть нарушения, нужно работать и над имитацией и над мелкой моторикой....он обожает песенки Татьяны, он все учит, повторяет, хоть и плохо говорит, но мелодию хорошо запоминает. Благодарю от всей души за то, что дарите любовь детям! За ваш труд, за ваш вклад, за вашу любовь к прекрасному',
+        name: 'Людмила О',
         bg: 'bg-gradient-to-br from-lavender/20 to-sage/20',
         avatarBg: 'bg-gradient-to-br from-sage to-accent',
     },
     {
         quote:
-      'Как педагог-воспитатель, я обращалась к Татьяне за консультацией по музыкальному развитию в группе. Получила массу идей и готовых материалов! Теперь наши занятия стали ещё интереснее.',
-        name: 'Елена В.',
-        role: 'Воспитатель, 15 лет опыта',
-        initial: 'Е',
+      'Очень нравятся занятия Татьяны! Жаль, что мы в разных городах, с удовольствием доверила бы ей внука',
+        name: 'grinenko736',
+        bg: 'bg-gradient-to-br from-rose/20 to-lavender/20',
+        avatarBg: 'bg-gradient-to-br from-accent to-rose',
+    },
+    {
+        quote:
+      'У меня проблема с музыкальным руководителем, она совершенно ничего не хочет делать, скоро утренник, а у нас даже не было сценария . Хорошо, что я нашла Татьяну, она просто меня спасла! Прекрасные игры и песни!',
+        name: 'Татьяна А.',
+        bg: 'bg-gradient-to-br from-milk to-blush/30',
+        avatarBg: 'bg-gradient-to-br from-rose to-lavender',
+    },
+    {
+        quote:
+      'Песенки Татьяны универсальные! Подходят и для деток с особенностями. Музыка и текст легко запоминаются. Клад для меня!',
+        name: 've_nera3184',
+        bg: 'bg-gradient-to-br from-lavender/20 to-sage/20',
+        avatarBg: 'bg-gradient-to-br from-sage to-accent',
+    },
+    {
+        quote:
+      `Я сама муз педагог, но фантазии не всегда хватает. 
+Татьяна такая молодец ,облегчает многим педагогам жизнь и украшает наши занятия!
+И самое главное, её песенки подходят как и для деток постарше, так и для самых маленьких.Я потихоньку внедряю их и в раннее развитие. 
+Плюс ещё её песенок в том, что есть сопровождение мелодии, точно не забудешь как поется песня! 
+Листы рабочие это просто огонь! 🔥🔥🔥
+Очень благодарна ,что есть в бесплатном доступе!`,
+        name: 'Анастасия Ч.',
         bg: 'bg-gradient-to-br from-rose/20 to-lavender/20',
         avatarBg: 'bg-gradient-to-br from-accent to-rose',
     },
@@ -201,7 +216,7 @@ const startAutoplay = (): void => {
     if (autoplayInterval) return
     autoplayInterval = setInterval(() => {
         sliderInstance.value?.next()
-    }, 5000)
+    }, 8000)
 }
 
 const stopAutoplay = (): void => {
