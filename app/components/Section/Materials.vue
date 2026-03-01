@@ -81,18 +81,20 @@
                         </NuxtLink>
                     </div>
                     <div class="relative">
-                        <div class="aspect-video rounded-2xl bg-gradient-to-br from-lavender/30 to-sage/30 flex items-center justify-center">
-                            <button
-                                type="button"
-                                class="w-16 h-16 rounded-full bg-white shadow-xl flex items-center justify-center hover:scale-110 transition-transform"
-                                aria-label="Воспроизвести видео"
+                        <video
+                            class="aspect-video rounded-2xl bg-gradient-to-br from-lavender/30 to-sage/30 w-full object-cover"
+                            controls
+                            preload="metadata"
+                            loop
+                            autoplay="true"
+                            muted
+                        >
+                            <source
+                                src="/materials.webm"
+                                type="video/webm"
                             >
-                                <Icon
-                                    name="lucide:play"
-                                    class="w-8 h-8 text-accent ml-1"
-                                />
-                            </button>
-                        </div>
+                            Ваш браузер не поддерживает видео.
+                        </video>
                         <div class="absolute -bottom-4 -right-4 bg-white rounded-xl shadow-lg px-4 py-2">
                             <BaseTag
                                 variant="white"
