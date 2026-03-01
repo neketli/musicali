@@ -76,6 +76,7 @@ export default defineNuxtConfig({
     },
 
     studio: {
+        dev: false,
         repository: {
             provider: 'github',
             owner: 'neketli',
