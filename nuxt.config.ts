@@ -78,6 +78,7 @@ export default defineNuxtConfig({
             provider: 'github',
             owner: 'neketli',
             repo: 'musicali',
+            branch: 'main',
         },
     },
     tailwindcss: {
