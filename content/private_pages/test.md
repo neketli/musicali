@@ -1,13 +1,16 @@
 ---
-title: 'Приватная запись'
-description: 'Пример использования всех компонентов для работы с изображениями и файлами из S3'
-cover: 'images/Cat03.jpg'
-coverAlt: 'Тестовое изображение'
-publishedAt: '2026-02-27'
-tags: ['музыка', 'инструменты', 'задачи']
+title: Приватная запись
+cover: images/Cat03.jpg
+coverAlt: Тестовое изображение
+description: Пример использования всех компонентов для работы с изображениями и файлами из S3
+publishedAt: 2026-02-27
+tags:
+  - музыка
+  - инструменты
+  - задачи
 ---
 
-# Тестирование компонентов для работы с S3
+# Приватная запись
 
 Эта статья демонстрирует все компоненты для работы с изображениями и файлами из S3 хранилища.
 
@@ -15,12 +18,7 @@ tags: ['музыка', 'инструменты', 'задачи']
 
 Изображения автоматически оптимизируются через Nuxt Image:
 
-
-::ProseImage
----
-src: images/Cat03.jpg
----
-::
+:prose-image{src="images/Cat03.jpg"}
 
 Также можно использовать относительные пути:
 
@@ -30,49 +28,20 @@ src: images/Cat03.jpg
 
 Иконки используются как placeholder с цветным фоном:
 
-::Icon
----
-name: lucide:image
-size: md
-color: sage
----
-::
+:icon{color="sage" name="lucide:image" size="md"}
 
-::Icon
----
-name: lucide:file
-size: lg
-color: rose
----
-::
+:icon{color="rose" name="lucide:file" size="lg"}
 
-::Icon
----
-name: lucide:download
-size: xl
-color: lavender
----
-::
-
+:icon{color="lavender" name="lucide:download" size="xl"}
 
 ## Кнопка скачивания
 
 Для скачивания файлов из S3 используйте компонент Download:
 
-::ProseDownload
----
-src: 'privacy-policy.pdf'
-buttonText: 'Скачать pdf'
-filename: 'Пользовательское соглашение.pdf'
----
-::
+:prose-download{button-text="Скачать pdf" filename="Пользовательское соглашение.pdf" src="privacy-policy.pdf"}
 
 ## Аудио плеер
 
 Воспроизведение аудиофайлов из S3:
 
-::ProsePlayer
----
-src: music/test.mp3
----
-::
+:prose-player{src="music/test.mp3"}
