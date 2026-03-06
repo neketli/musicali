@@ -1,5 +1,4 @@
-import { eventHandler, getRouterParam, createError } from 'h3'
-import { blob } from 'hub:blob'
+import { AwsClient } from 'aws4fetch'
 
 export default eventHandler(async (event) => {
     const pathname = getRouterParam(event, 'path')
@@ -12,6 +11,27 @@ export default eventHandler(async (event) => {
     }
 
     const decodedPath = decodeURIComponent(pathname)
+    const { s3 } = useRuntimeConfig(event)
 
-    return blob.serve(event, decodedPath)
+    const client = new AwsClient({
+        service: 's3',
+        accessKeyId: s3.accessKey,
+        secretAccessKey: s3.secretAccessKey,
+        region: s3.region,
+    })
+
+    const url = new URL(`${s3.endpoint}/${s3.bucket}/${decodedPath}`)
+    url.searchParams.set('X-Amz-Expires', '3600')
+    const signedRequest = await client.sign(
+        new Request(url, {
+            method: 'GET',
+        }),
+        {
+            aws: {
+                signQuery: true,
+            },
+        },
+    )
+
+    return sendRedirect(event, signedRequest.url, 302)
 })

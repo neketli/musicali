@@ -14,7 +14,6 @@ export default defineNuxtConfig({
         '@nuxtjs/seo',
         'nuxt-yandex-metrika',
     ],
-
     devtools: {
         enabled: true,
     },
@@ -38,21 +37,21 @@ export default defineNuxtConfig({
         defaultLocale: 'ru',
     },
 
-    experimental: {
-        appManifest: true,
-    },
-    compatibilityDate: '2024-04-03',
-
-    hub: {
-        blob: {
-            driver: 's3',
-            accessKeyId: process.env.NUXT_S3_ACCESS_KEY,
+    runtimeConfig: {
+        s3: {
+            accessKey: process.env.NUXT_S3_ACCESS_KEY,
             secretAccessKey: process.env.NUXT_S3_SECRET_KEY,
             bucket: process.env.NUXT_S3_BUCKET,
             region: process.env.NUXT_S3_REGION,
             endpoint: process.env.NUXT_S3_ENDPOINT,
         },
     },
+
+    experimental: {
+        appManifest: true,
+    },
+    compatibilityDate: '2024-04-03',
+
     eslint: {
         config: {
             stylistic: {

@@ -9,7 +9,7 @@ Nuxt Content application built with Nuxt framework.
 
 - **Nuxt Content** - Git-based CMS for Nuxt
 - **Nuxt Studio** - Self-hosted content editor
-- **Nuxt Hub** - Use static files as blobs from S3
+- **aws4fetch** - Generate presigned URLs to S3 static storage
 - **SSR** - Server render, actions and SEO support
 
 ## 🚀 Quick Start
