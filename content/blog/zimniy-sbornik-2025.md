@@ -31,7 +31,7 @@ tags:
 - текстовые карточки для удобного разучивания
 - видео-примеры исполнения
 
-:video{autoplay controls loop muted src="/media/video/zima2025.webm" width="700"}
+:video{autoplay playsinline controls loop muted src="/media/video/zima2025.webm" width="700"}
 
 **Чем полезен сборник:**
 
@@ -45,6 +45,6 @@ tags:
 
 [*В архиве много материалов, поэтому загрузка может быть не самой быстрой. Самое время заварить чай и немного отдохнуть, пока файл скачивается*]{style="color: orange"}
 
-::prose-download{filename="zima2025" src="documents/zima2025.zip"}
+::prose-download{filename="Зимний сборник 2025" src="documents/zima2025.zip"}
 СКАЧАТЬ БЕСПЛАТНО
 ::

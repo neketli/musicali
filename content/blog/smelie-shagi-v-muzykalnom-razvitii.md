@@ -29,7 +29,7 @@ tags:
 - рабочие листы с картинками
 - видео-примеры выполнения
 
-:video{autoplay controls muted poster="images/IMG_3632.MOV" src="/materials.webm" width="700"}
+:video{autoplay playsinline controls muted poster="images/IMG_3632.MOV" src="/materials.webm" width="700"}
 
 Ребёнок слушает музыку и смотрит на иллюстрации в рабочем листе. В нужный момент он должен **ритмично попасть по картинке** - хлопнуть, показать жест или выполнить движение. Так музыка соединяется с изображением и движением.
 
@@ -47,7 +47,7 @@ tags:
 ::prose-download
 ---
 buttonText: СКАЧАТЬ БЕСПЛАТНО
-filename: list2025
+filename: Смелые шаги в музыкальном развитии
 src: documents/list2025.zip
 ---
 СКАЧАТЬ БЕСПЛАТНО

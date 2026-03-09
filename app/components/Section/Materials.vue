@@ -73,9 +73,8 @@
                             </li>
                         </ul>
                         <NuxtLink
-                            href="#contact"
+                            to="/blog/smelie-shagi-v-muzykalnom-razvitii"
                             class="btn-primary inline-flex px-6 py-3 rounded-full text-white font-semibold"
-                            @click.prevent="scrollTo('#contact')"
                         >
                             Получить бесплатно
                         </NuxtLink>
@@ -86,8 +85,9 @@
                             controls
                             preload="metadata"
                             loop
-                            autoplay="true"
+                            autoplay
                             muted
+                            playsinline
                         >
                             <source
                                 src="/materials.webm"
@@ -111,8 +111,6 @@
 </template>
 
 <script setup lang="ts">
-const { scrollTo } = useSmoothScroll()
-
 const materials = [
     {
         title: 'Детские песни',

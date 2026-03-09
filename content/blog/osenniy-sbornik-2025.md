@@ -26,7 +26,7 @@ tags:
 - **видео-примеры**
 - **рабочие листы с заданиями**
 
-:video{autoplay controls muted src="/media/video/osen.webm" width="700"}
+:video{autoplay playsinline controls muted src="/media/video/osen.webm" width="700"}
 
 > **Особенности сборника:** легко адаптировать под свои задачи, менять формат подачи под возраст и уровень детей
 
