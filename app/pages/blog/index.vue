@@ -138,4 +138,9 @@ const formatDate = (dateString: string) => {
 useHead({
     title: 'Блог - Музыкальный педагог Татьяна Ли',
 })
+
+useSeoMeta({
+    title: 'Блог - Музыкальный педагог Татьяна Ли',
+    description: 'Заметки, советы и истории о музыкальном развитии детей от Татьяны Ли',
+})
 </script>

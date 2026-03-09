@@ -98,4 +98,38 @@ const formatDate = (dateString: string) => {
         day: 'numeric',
     })
 }
+
+useSeoMeta({
+    title: post.value.seo?.title || post.value.title,
+    description: post.value.seo?.description || post.value.description,
+})
+
+useHead({
+    meta: [
+        {
+            name: 'og:title',
+            content: post.value.seo?.title || post.value.title,
+        },
+        {
+            name: 'og:description',
+            content: post.value.seo?.description || post.value.description,
+        },
+        {
+            name: 'og:image',
+            content: post.value.cover ? new URL(post.value.cover, 'https://musicali.ru').href : undefined,
+        },
+        {
+            name: 'og:type',
+            content: 'article',
+        },
+        {
+            name: 'article:published_time',
+            content: post.value.publishedAt,
+        },
+        {
+            name: 'article:tag',
+            content: post.value.tags?.join(', '),
+        },
+    ],
+})
 </script>

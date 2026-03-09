@@ -3,13 +3,10 @@ title: Осенний сборник 2025
 description: Музыкально-развивающий комплект для детей от 2 до 5 лет
 cover: images/gradient-autumn-background_52683-67731.jpg.avif
 coverAlt: осенний сборник
-navigation:
-  title: осенний сборник
-  description: осенний сборник
 publishedAt: 2026-03-01
 seo:
-  title: осенний сборник
-  description: осенний сборник
+  title: Осенний сборник 2025
+  description: Музыкально-развивающий комплект упражнений на осеннюю тематику для детей от 2 до 5 лет
 tags:
   - песни
   - упражнения

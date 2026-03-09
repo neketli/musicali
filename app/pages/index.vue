@@ -16,11 +16,5 @@ useScrollReveal()
 
 useHead({
     title: 'Musicali - Музыкальный педагог и логопед Татьяна Ли',
-    meta: [
-        {
-            name: 'google-site-verification',
-            content: 'oVqHkcudR18sevZYsVfQtB-zqQzW-fTdWsYKJLT80cM',
-        },
-    ],
 })
 </script>

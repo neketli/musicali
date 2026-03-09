@@ -13,6 +13,10 @@ export default defineContentConfig({
                 coverAlt: z.string().optional(),
                 publishedAt: z.string(),
                 tags: z.array(z.string()).optional(),
+                seo: z.object({
+                    title: z.string().optional(),
+                    description: z.string().optional(),
+                }).optional(),
             }),
         }),
         private_pages: defineCollection({
@@ -25,6 +29,10 @@ export default defineContentConfig({
                 coverAlt: z.string().optional(),
                 publishedAt: z.string(),
                 tags: z.array(z.string()).optional(),
+                seo: z.object({
+                    title: z.string().optional(),
+                    description: z.string().optional(),
+                }).optional(),
             }),
         }),
     },
